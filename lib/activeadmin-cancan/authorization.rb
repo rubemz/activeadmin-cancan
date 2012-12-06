@@ -26,14 +26,14 @@ ActiveAdmin::DSL.class_eval do
     @config = config
     resource = controller.resource_class
     instance_eval do
-      menu :if => proc{ can?(:manage, resource) }
+      menu :if => proc{ can?(:read, resource) }
     end
   end
 
   def prepare_menu5
     resource = controller.resource_class
     instance_eval do
-      menu :if => proc{ can?(:manage, resource) }
+      menu :if => proc{ can?(:read, resource) }
     end
   end
 end
